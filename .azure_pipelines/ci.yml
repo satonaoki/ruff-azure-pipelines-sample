@@ -1,0 +1,20 @@
+trigger:
+  - main
+
+stages:
+  - stage: Build
+    jobs:
+      - job: Build
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: "3.x"
+            displayName: "Use Python 3.x"
+
+          - script: pip install ruff
+            displayName: "Install Ruff"
+
+          - script: ruff check --output-format azure .
+            displayName: "Run Ruff"
