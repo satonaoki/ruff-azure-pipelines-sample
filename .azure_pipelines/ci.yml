@@ -16,5 +16,5 @@ stages:
           - script: pip install ruff
             displayName: "Install Ruff"
 
-          - script: ruff check --output-format azure .
+          - script: ruff -v check --output-format azure .
             displayName: "Run Ruff"
