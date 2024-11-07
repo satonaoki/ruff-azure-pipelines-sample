@@ -1,0 +1,1 @@
+# ruff-azure-pipelines-sample
